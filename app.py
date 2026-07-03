@@ -40,6 +40,10 @@ def create_app(config=None):
     with app.app_context():
         db.create_all()
 
+    #Added
+    @app.route("/")
+    def index():
+        return {"status": "ok", "service": "Mixtape"}
     return app
 
 
